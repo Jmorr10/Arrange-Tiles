@@ -55,27 +55,31 @@ body > section, body > header, body > footer {
 }
 
 #game-title {
+    flex: 1;
     margin: 0 0 0 16px;
+    text-align: left;
 }
 
 #button-holder {
     flex: 2;
     display: flex;
 
+    height: 12.5%;
+
     position: absolute;
     right: 0;
-    bottom: 16px;
+    bottom: 0;
     left: 0;
 
     margin: 0;
     padding: 11px;
 
+    justify-content: space-around;
     justify-content: space-evenly;
 }
 
 #game-moves {
-    position: absolute;
-    right: 16px;
+    margin-right: 16px;
 }
 
 #game-header,
@@ -97,7 +101,7 @@ body > section, body > header, body > footer {
 .action-button {
     background: none;
     border: none;
-    font-size: 3rem;
+    font-size: 2.8rem;
 }
 
 #board {
@@ -128,7 +132,7 @@ body > section, body > header, body > footer {
     align-items: center;
     justify-content: center;
 
-    height: 100%;
+    height: inherit;
 
     position: relative;
 
@@ -190,6 +194,25 @@ body > section, body > header, body > footer {
 }
 
 /* Utility CSS */
+.portrait-please {
+    display: none;
+
+    width: 66%;
+    height: 6.5rem;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+
+    color: #fff;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
 .disable-selection,
 #game-title,
 .tile {
@@ -318,10 +341,11 @@ body > section, body > header, body > footer {
         right: 0;
         left: auto;
         bottom: auto;
-        top: 16px;
     }
 
     #game-moves {
+        position: absolute;
+        margin-right: 0 !important;
         right: 0;
         left: 0;
     }
@@ -395,5 +419,16 @@ body > section, body > header, body > footer {
 @media screen and (min-width: 1600px) {
     #board {
         width: 33%;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1023px), (orientation: landscape) and (max-height: 609px) {
+
+    body > section, body > header, body > footer {
+        display: none !important;
+    }
+
+    .portrait-please {
+        display: block !important;
     }
 }
